@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fone de Ouvido Bluetooth 6.0 Sem Fio ELETRO</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f3f4f6;
+        }
+    </style>
+</head>
+<body class="text-gray-900 antialiased">
+
+    <!-- BARRA DE URGÊNCIA -->
+    <div class="bg-red-600 text-white text-center py-2.5 px-4 text-xs md:text-sm font-semibold flex items-center justify-center gap-2 sticky top-0 z-50 shadow-md">
+        <svg class="w-4 h-4 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+        <span>Promoção relâmpago! Termina em: <span id="timer" class="font-bold underline">15:00</span></span>
+    </div>
+
+    <main class="max-w-xl mx-auto bg-white shadow-2xl min-h-screen pb-20">
+        
+        <!-- HERO SECTION -->
+        <section class="p-6 md:p-8 text-center border-b border-gray-100">
+            <div class="inline-flex items-center gap-2 bg-red-50 text-red-600 px-3.5 py-1.5 rounded-full text-xs font-bold mb-6 shadow-sm">
+                <svg class="w-4 h-4 text-red-600 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                <span id="viewers-count">64</span> pessoas estão a visualizar este produto agora
+            </div>
+            
+            <div class="relative rounded-3xl overflow-hidden shadow-lg mb-6 border border-gray-100 bg-gray-50">
+                <img 
+                    src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=600&q=80" 
+                    alt="Fone de Ouvido ELETRO" 
+                    class="w-full h-80 object-cover transform hover:scale-105 transition-transform duration-700"
+                />
+                <span class="absolute top-4 left-4 bg-black text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Oferta Exclusiva BD</span>
+            </div>
+            
+            <h1 class="text-2xl md:text-3xl font-extrabold tracking-tight mb-3 text-gray-900">
+                Fone de Ouvido Bluetooth 6.0 Sem Fio ELETRO, Mini Earbuds Ultraleve 2.8g
+            </h1>
+            <p class="text-gray-500 text-base md:text-lg mb-6 leading-relaxed">
+                Confortável sem dor, som de alta qualidade, estojo de carregamento e resistente a suor e respingos.
+            </p>
+
+            <div class="flex flex-col items-center justify-center mb-6 bg-gray-50 p-4 rounded-2xl border border-gray-100">
+                <span class="text-gray-400 line-through text-base font-medium">R$ 15,82</span>
+                <span class="text-5xl font-black text-black tracking-tighter my-1">
+                    R$ 9,90
+                </span>
+                <span class="text-green-600 font-bold text-xs uppercase bg-green-100 px-3 py-1 rounded-full mt-2">
+                    Você economiza R$ 5,92 (37% OFF)
+                </span>
+            </div>
+
+            <button 
+                onclick="openModal()" 
+                class="w-full bg-red-600 hover:bg-red-700 text-white font-black text-xl py-4 rounded-2xl shadow-[0_10px_25px_-5px_rgba(220,38,38,0.5)] transition-all transform hover:-translate-y-0.5 active:translate-y-0 text-center cursor-pointer"
+            >
+                Comprar Agora
+            </button>
+            
+            <div class="mt-4 flex items-center justify-center gap-2 text-sm text-red-600 font-bold">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                Apenas <span id="units-left">9</span> unidades restantes em stock!
+            </div>
+        </section>
+
+        <!-- BENEFÍCIOS -->
+        <section class="p-6 md:p-8 bg-gray-50">
+            <h2 class="text-xl font-bold text-center mb-6">Por que você precisa disso?</h2>
+            <div class="grid grid-cols-1 gap-3">
+                <div class="bg-white p-4 rounded-2xl shadow-sm flex items-start gap-3.5 border border-gray-100">
+                    <div class="bg-green-50 text-green-600 p-2 rounded-xl mt-0.5">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-gray-900">Ultraleve de 2.8g</h3>
+                        <p class="text-sm text-gray-500 mt-0.5">Design ergonómico e super leve, confortável sem dor ao usar por horas.</p>
+                    </div>
+                </div>
+                <div class="bg-white p-4 rounded-2xl shadow-sm flex items-start gap-3.5 border border-gray-100">
+                    <div class="bg-green-50 text-green-600 p-2 rounded-xl mt-0.5">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-gray-900">Bluetooth 6.0 Estável</h3>
+                        <p class="text-sm text-gray-500 mt-0.5">Conexão ultra rápida, sem atrasos e sem falhas no áudio.</p>
+                    </div>
+                </div>
+                <div class="bg-white p-4 rounded-2xl shadow-sm flex items-start gap-3.5 border border-gray-100">
+                    <div class="bg-green-50 text-green-600 p-2 rounded-xl mt-0.5">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-gray-900">Som de Alta Qualidade</h3>
+                        <p class="text-sm text-gray-500 mt-0.5">Graves profundos e agudos nítidos para músicas e chamadas sem fio.</p>
+                    </div>
+                </div>
+                <div class="bg-white p-4 rounded-2xl shadow-sm flex items-start gap-3.5 border border-gray-100">
+                    <div class="bg-green-50 text-green-600 p-2 rounded-xl mt-0.5">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-gray-900">Resistente a Suor e Respingos</h3>
+                        <p class="text-sm text-gray-500 mt-0.5">Ideal para treinos intensos, corridas e uso no dia a dia sem preocupações.</p>
+                    </div>
+                </div>
+                <div class="bg-white p-4 rounded-2xl shadow-sm flex items-start gap-3.5 border border-gray-100">
+                    <div class="bg-green-50 text-green-600 p-2 rounded-xl mt-0.5">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-gray-900">Estojo de Carregamento</h3>
+                        <p class="text-sm text-gray-500 mt-0.5">Até 30 horas de autonomia total com o estojo portátil compacto.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AVALIAÇÕES -->
+        <section class="p-6 md:p-8 bg-gray-50">
+            <h2 class="text-xl font-bold text-center mb-6">O que dizem os nossos clientes</h2>
+            <div class="grid grid-cols-1 gap-4">
+                
+                <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 rounded-full bg-gray-200 font-bold flex items-center justify-center text-gray-700">BC</div>
+                        <div>
+                            <p class="font-bold text-sm">Bruna Cardoso</p>
+                            <div class="flex text-yellow-400">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm italic">"Surpreendente pelo preço! Muito leve, nem sinto que estou a usá-los no ouvido."</p>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 rounded-full bg-gray-200 font-bold flex items-center justify-center text-gray-700">GS</div>
+                        <div>
+                            <p class="font-bold text-sm">Gabriel Souza</p>
+                            <div class="flex text-yellow-400">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm italic">"O Bluetooth 6.0 conecta instantaneamente ao telemóvel. Som limpo e sem chiados."</p>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 rounded-full bg-gray-200 font-bold flex items-center justify-center text-gray-700">RA</div>
+                        <div>
+                            <p class="font-bold text-sm">Rafaela Almeida</p>
+                            <div class="flex text-yellow-400">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm italic">"Comprei para correr e uso na academia. Não caem de jeito nenhum e resistem bem ao suor."</p>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 rounded-full bg-gray-200 font-bold flex items-center justify-center text-gray-700">TM</div>
+                        <div>
+                            <p class="font-bold text-sm">Thiago Mendes</p>
+                            <div class="flex text-yellow-400">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm italic">"Por R$ 9,90 é simplesmente imbatível. Qualidade de construção idêntica aos caros."</p>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 rounded-full bg-gray-200 font-bold flex items-center justify-center text-gray-700">CS</div>
+                        <div>
+                            <p class="font-bold text-sm">Camila Santos</p>
+                            <div class="flex text-yellow-400">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm italic">"A bateria dura muito com a caixinha. Chegou muito rápido na minha casa."</p>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 rounded-full bg-gray-200 font-bold flex items-center justify-center text-gray-700">FL</div>
+                        <div>
+                            <p class="font-bold text-sm">Felipe Lima</p>
+                            <div class="flex text-yellow-400">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm italic">"Melhor aquisição. Recomendo a todos de olhos fechados."</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- GARANTIAS -->
+        <section class="p-6 md:p-8 border-t border-gray-100">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div class="flex flex-col items-center">
+                    <div class="bg-gray-100 p-3 rounded-2xl mb-2 text-black">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                    </div>
+                    <span class="text-xs font-bold text-gray-800">Compra Segura</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="bg-gray-100 p-3 rounded-2xl mb-2 text-black">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg>
+                    </div>
+                    <span class="text-xs font-bold text-gray-800">Pagamento Seguro</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="bg-gray-100 p-3 rounded-2xl mb-2 text-black">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <span class="text-xs font-bold text-gray-800">Envio Rápido</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="bg-gray-100 p-3 rounded-2xl mb-2 text-black">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    </div>
+                    <span class="text-xs font-bold text-gray-800">Suporte 24/7</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="p-6 md:p-8 bg-gray-50">
+            <h2 class="text-xl font-bold text-center mb-6">Perguntas Frequentes</h2>
+            <div class="space-y-3">
+                <details class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group">
+                    <summary class="px-5 py-4 font-bold text-sm cursor-pointer flex justify-between items-center select-none">
+                        Como funciona?
+                        <svg class="w-5 h-5 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="px-5 pb-4 text-gray-600 text-sm">
+                        Basta retirar os fones do estojo de carregamento, ligar o Bluetooth 6.0 do seu telemóvel e emparelhar instantaneamente. Eles ligam e desligam de forma automática.
+                    </div>
+                </details>
+
+                <details class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group">
+                    <summary class="px-5 py-4 font-bold text-sm cursor-pointer flex justify-between items-center select-none">
+                        Qual o prazo de entrega?
+                        <svg class="w-5 h-5 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="px-5 pb-4 text-gray-600 text-sm">
+                        O prazo médio de entrega é de 5 a 12 dias úteis, com envio rastreado direto para a sua morada.
+                    </div>
+                </details>
+
+                <details class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group">
+                    <summary class="px-5 py-4 font-bold text-sm cursor-pointer flex justify-between items-center select-none">
+                        Como acompanhar o pedido?
+                        <svg class="w-5 h-5 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="px-5 pb-4 text-gray-600 text-sm">
+                        Enviamos o código de rastreio oficial diretamente para o seu e-mail e WhatsApp em até 3 dias úteis após a confirmação do pagamento.
+                    </div>
+                </details>
+
+                <details class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group">
+                    <summary class="px-5 py-4 font-bold text-sm cursor-pointer flex justify-between items-center select-none">
+                        Tem garantia?
+                        <svg class="w-5 h-5 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="px-5 pb-4 text-gray-600 text-sm">
+                        Sim! Oferecemos garantia de 7 dias de satisfação total ou o reembolso completo do seu dinheiro.
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <!-- CTA FINAL -->
+        <section class="p-6 md:p-8 text-center">
+            <h2 class="text-2xl font-bold mb-6">Pronto para garantir o seu por apenas R$ 9,90?</h2>
+            <button 
+                onclick="openModal()" 
+                class="w-full bg-black hover:bg-gray-800 text-white font-black text-xl py-5 rounded-2xl shadow-xl transition-all transform hover:-translate-y-0.5 active:translate-y-0 text-center cursor-pointer"
+            >
+                Quero Aproveitar a Oferta
+            </button>
+            <p class="mt-4 text-xs text-gray-400 font-medium">Ambiente 100% seguro. Os seus dados estão totalmente protegidos.</p>
+        </section>
+
+    </main>
+
+    <!-- MODAL DE CADASTRO, MORADA E PIX -->
+    <div id="checkout-modal" class="fixed inset-0 bg-black/70 z-50 hidden flex items-center justify-center p-4 backdrop-blur-sm">
+        <div class="bg-white w-full max-w-lg rounded-3xl shadow-2xl overflow-hidden p-6 md:p-8 relative animate-in fade-in zoom-in duration-300">
+            <button onclick="closeModal()" class="absolute top-5 right-5 text-gray-400 hover:text-black font-bold text-xl bg-gray-100 w-10 h-10 rounded-full flex items-center justify-center transition-colors">✕</button>
+            
+            <div class="text-center mb-6">
+                <span class="bg-red-50 text-red-600 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide">Passo Final de Segurança</span>
+                <h3 class="text-2xl font-extrabold text-gray-900 mt-2">Criar Conta e Morada de Envio</h3>
+                <p class="text-gray-500 text-sm mt-1">Preencha os seus dados para gerar o Pix e receber o seu Fone ELETRO.</p>
+            </div>
+
+            <form id="order-form" onsubmit="submitOrder(event)" class="space-y-4 text-left">
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">Nome Completo</label>
+                    <input type="text" id="field-name" required placeholder="Ex: Maria Silva" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-red-600 focus:ring-2 focus:ring-red-100 outline-none text-sm transition-all" />
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">E-mail</label>
+                        <input type="email" id="field-email" required placeholder="seu@email.com" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-red-600 focus:ring-2 focus:ring-red-100 outline-none text-sm transition-all" />
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">Telemóvel / WhatsApp</label>
+                        <input type="tel" id="field-phone" required placeholder="(99) 99999-9999" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-red-600 focus:ring-2 focus:ring-red-100 outline-none text-sm transition-all" />
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-3 gap-3">
+                    <div class="col-span-1">
+                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">CEP / Postal</label>
+                        <input type="text" id="field-cep" required placeholder="00000-000" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-red-600 focus:ring-2 focus:ring-red-100 outline-none text-sm transition-all" />
+                    </div>
+                    <div class="col-span-2">
+                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">Morada / Endereço</label>
+                        <input type="text" id="field-address" required placeholder="Rua, Avenida, etc." class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-red-600 focus:ring-2 focus:ring-red-100 outline-none text-sm transition-all" />
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-3 gap-3">
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">Número</label>
+                        <input type="text" id="field-number" required placeholder="Nº" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-red-600 focus:ring-2 focus:ring-red-100 outline-none text-sm transition-all" />
+                    </div>
+                    <div class="col-span-2">
+                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">Cidade / Estado</label>
+                        <input type="text" id="field-city" required placeholder="Cidade - UF" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-red-600 focus:ring-2 focus:ring-red-100 outline-none text-sm transition-all" />
+                    </div>
+                </div>
+
+                <button type="submit" id="submit-btn" class="w-full bg-red-600 hover:bg-red-700 text-white font-extrabold text-base py-4 rounded-xl shadow-lg transition-all mt-4 flex items-center justify-center gap-2 cursor-pointer">
+                    <span>Gerar Pix (R$ 9,90)</span>
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        let totalSeconds = 15 * 60;
+        const timerEl = document.getElementById('timer');
+        
+        setInterval(() => {
+            if (totalSeconds > 0) {
+                totalSeconds--;
+                const minutes = Math.floor(totalSeconds / 60).toString().padStart(2, '0');
+                const seconds = (totalSeconds % 60).toString().padStart(2, '0');
+                timerEl.textContent = `${minutes}:${seconds}`;
+            }
+        }, 1000);
+
+        setInterval(() => {
+            const viewersEl = document.getElementById('viewers-count');
+            let currentViewers = parseInt(viewersEl.textContent);
+            let change = Math.floor(Math.random() * 5) - 2;
+            let newViewers = Math.max(45, currentViewers + change);
+            viewersEl.textContent = newViewers;
+        }, 6000);
+
+        function openModal() {
+            document.getElementById('checkout-modal').classList.remove('hidden');
+            document.getElementById('checkout-modal').classList.add('flex');
+        }
+        function closeModal() {
+            document.getElementById('checkout-modal').classList.add('hidden');
+            document.getElementById('checkout-modal').classList.remove('flex');
+        }
+
+        async function submitOrder(e) {
+            e.preventDefault();
+            
+            const formData = {
+                nome: document.getElementById('field-name').value,
+                email: document.getElementById('field-email').value,
+                telefone: document.getElementById('field-phone').value,
+                cep: document.getElementById('field-cep').value,
+                endereco: document.getElementById('field-address').value + ', Nº ' + document.getElementById('field-number').value + ' - ' + document.getElementById('field-city').value
+            };
+
+            const submitBtn = document.getElementById('submit-btn');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = 'A gerar Pix seguro na GoatPay...';
+            submitBtn.disabled = true;
+
+            try {
+                // Faz a requisição para o script PHP no seu servidor que se comunica com a GoatPay
+                const response = await fetch('gerar-pix.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                });
+                
+                const result = await response.json();
+
+                if (result.success) {
+                    // Substitui o modal pelo QR Code do Pix sem sair da página
+                    const modalContainer = document.querySelector('#checkout-modal > div');
+                    modalContainer.innerHTML = `
+                        <div class="text-center">
+                            <span class="bg-green-50 text-green-600 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide">Conta Criada com Sucesso!</span>
+                            <h3 class="text-2xl font-extrabold text-gray-900 mt-2">Pague com Pix (R$ 9,90)</h3>
+                            <p class="text-gray-500 text-sm mt-1">Escaneie o QR Code abaixo com o aplicativo do seu banco:</p>
+                            
+                            <div class="my-6 flex justify-center">
+                                <img src="data:image/png;base64,${result.qr_code_base64}" alt="QR Code Pix" class="w-48 h-48 border rounded-xl shadow-md p-2 bg-white" />
+                            </div>
+
+                            <div class="mb-4 text-left">
+                                <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">Pix Copia e Cola</label>
+                                <input type="text" readonly value="${result.pix_copy_paste}" id="pix-code-input" class="w-full px-3 py-2 text-xs bg-gray-50 border rounded-xl text-center select-all mb-2" />
+                                <button type="button" onclick="copyPixCode()" class="w-full bg-gray-900 hover:bg-black text-white text-xs font-bold py-3 rounded-xl transition-all cursor-pointer">
+                                    Copiar Código Pix
+                                </button>
+                            </div>
+
+                            <p class="text-xs text-gray-400 mt-4">O pedido será aprovado automaticamente assim que o pagamento for confirmado.</p>
+                            <button type="button" onclick="closeModal()" class="mt-4 text-sm text-red-600 font-bold hover:underline cursor-pointer">Fechar janela</button>
+                        </div>
+                    `;
+                } else {
+                    alert('Erro: ' + (result.message || 'Não foi possível gerar o pagamento.'));
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                }
+            } catch (err) {
+                console.error(err);
+                alert('Erro de conexão ao comunicar com o servidor de pagamento.');
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }
+        }
+
+        function copyPixCode() {
+            const copyText = document.getElementById("pix-code-input");
+            copyText.select();
+            copyText.setSelectionRange(0, 99999);
+            navigator.clipboard.writeText(copyText.value);
+            alert("Código Pix copiado com sucesso!");
+        }
+    </script>
+</body>
+</html>
