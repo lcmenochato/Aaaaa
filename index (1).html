@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fone Bluetooth Eletro - Promoção Imperdível</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    <!-- HEADER / TOPO -->
+    <header class="bg-black text-white py-3 text-center text-xs font-bold uppercase tracking-widest">
+        ⚡ Promoção Relâmpago • Portes Grátis Hoje
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="max-w-md mx-auto p-4 md:p-6 bg-white shadow-xl min-h-screen">
+        
+        <div class="text-center my-6">
+            <span class="bg-red-100 text-red-600 px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider">Últimas Unidades</span>
+            <h1 class="text-3xl font-black text-gray-900 mt-3 leading-tight">Fone Bluetooth Eletro Pro</h1>
+            <p class="text-gray-500 text-sm mt-1">Som de alta definição, cancelamento de ruído e bateria de longa duração.</p>
+        </div>
+
+        <!-- IMAGEM DO PRODUTO -->
+        <div class="rounded-3xl overflow-hidden shadow-lg border border-gray-100 mb-6 bg-gray-100">
+            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=1000&auto=format&fit=crop" alt="Fone Bluetooth Eletro" class="w-full h-64 object-cover">
+        </div>
+
+        <!-- PREÇO -->
+        <div class="bg-red-50 border border-red-100 rounded-2xl p-4 text-center mb-6">
+            <span class="text-xs text-red-600 font-bold uppercase block">Preço Promocional</span>
+            <div class="flex items-center justify-center gap-2 mt-1">
+                <span class="text-gray-400 line-through text-lg">R$ 99,90</span>
+                <span class="text-3xl font-black text-red-600">R$ 9,90</span>
+            </div>
+            <span class="text-xs text-gray-500 mt-1 block">Pagamento seguro via Pix</span>
+        </div>
+
+        <!-- BOTÃO DE COMPRA DIRETO PARA GOATPAY -->
+        <div class="space-y-3">
+            <button 
+                onclick="openModal()" 
+                class="w-full bg-red-600 hover:bg-red-700 text-white font-black text-xl py-4 rounded-2xl shadow-[0_10px_25px_-5px_rgba(220,38,38,0.5)] transition-all transform hover:-translate-y-0.5 active:translate-y-0 text-center cursor-pointer"
+            >
+                Comprar Agora
+            </button>
+        </div>
+
+        <div class="mt-8 border-t border-gray-100 pt-6 text-center text-xs text-gray-400">
+            <p>🔒 Compra 100% Segura e Garantida.</p>
+            <p class="mt-1">© 2026 Fone Eletro. Todos os direitos reservados.</p>
+        </div>
+
+    </main>
+
+    <!-- MODAL DE CADASTRO E MORADA -->
+    <div id="checkout-modal" class="fixed inset-0 bg-black/70 z-50 hidden flex items-center justify-center p-4 backdrop-blur-sm">
+        <div class="bg-white w-full max-w-lg rounded-3xl shadow-2xl overflow-hidden p-6 md:p-8 relative animate-in fade-in zoom-in duration-300">
+            <button onclick="closeModal()" class="absolute top-5 right-5 text-gray-400 hover:text-black font-bold text-xl bg-gray-100 w-10 h-10 rounded-full flex items-center justify-center transition-colors">✕</button>
+            
+            <div class="text-center mb-6">
+                <span class="bg-red-50 text-red-600 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide">Passo Final de Segurança</span>
+                <h3 class="text-2xl font-extrabold text-gray-900 mt-2">Criar Conta e Morada de Envio</h3>
+                <p class="text-gray-500 text-sm mt-1">Preencha os seus dados para receber o seu Fone ELETRO com segurança.</p>
+            </div>
+
+            <form id="order-form" onsubmit="submitOrder(event)" class="space-y-4 text-left">
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">Nome Completo</label>
+                    <input type="text" required placeholder="Ex: Maria Silva" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-red-600 focus:ring-2 focus:ring-red-100 outline-none text-sm transition-all" />
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">E-mail</label>
+                        <input type="email" required placeholder="seu@email.com" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-red-600 focus:ring-2 focus:ring-red-100 outline-none text-sm transition-all" />
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">Telemóvel / WhatsApp</label>
+                        <input type="tel" required placeholder="(99) 99999-9999" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-red-600 focus:ring-2 focus:ring-red-100 outline-none text-sm transition-all" />
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-3 gap-3">
+                    <div class="col-span-1">
+                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">CEP / Código Postal</label>
+                        <input type="text" required placeholder="00000-000" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-red-600 focus:ring-2 focus:ring-red-100 outline-none text-sm transition-all" />
+                    </div>
+                    <div class="col-span-2">
+                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">Morada / Endereço</label>
+                        <input type="text" required placeholder="Rua, Avenida, etc." class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-red-600 focus:ring-2 focus:ring-red-100 outline-none text-sm transition-all" />
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-3 gap-3">
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">Número</label>
+                        <input type="text" required placeholder="Nº" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-red-600 focus:ring-2 focus:ring-red-100 outline-none text-sm transition-all" />
+                    </div>
+                    <div class="col-span-2">
+                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">Cidade / Estado</label>
+                        <input type="text" required placeholder="Cidade - UF" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-red-600 focus:ring-2 focus:ring-red-100 outline-none text-sm transition-all" />
+                    </div>
+                </div>
+
+                <button type="submit" class="w-full bg-red-600 hover:bg-red-700 text-white font-extrabold text-base py-4 rounded-xl shadow-lg transition-all mt-4 flex items-center justify-center gap-2">
+                    <span>Ir para o Pagamento (R$ 9,90)</span>
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- SCRIPT DE INTERAÇÃO -->
+    <script>
+        function openModal() {
+            document.getElementById('checkout-modal').classList.remove('hidden');
+        }
+        function closeModal() {
+            document.getElementById('checkout-modal').classList.add('hidden');
+        }
+        function submitOrder(e) {
+            e.preventDefault();
+            window.location.href = 'https://pay.goatpay.com.br/pay/f4p5a0/fone-bluetooth-eletro';
+        }
+    </script>
+</body>
+</html>
