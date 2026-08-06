@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FaceSlim - Avaliação & Loja Oficial</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #f1f5f9;
+    color: #1e293b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 430px;
+    background: #ffffff;
+    min-height: 100vh;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 450px) {
+    .container {
+        min-height: auto;
+        border-radius: 24px;
+        overflow: hidden;
+    }
+}
+
+/* ESTILOS DO QUIZ */
+.quiz-section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.header {
+    background: linear-gradient(135deg, #0f172a 0%, #334155 100%);
+    padding: 24px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.header h1 {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.progress-bar-container {
+    width: 100%;
+    background-color: #e2e8f0;
+    height: 6px;
+}
+
+.progress-bar {
+    width: 20%;
+    height: 100%;
+    background-color: #059669;
+    transition: width 0.3s ease;
+}
+
+.quiz-content {
+    padding: 28px 24px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* CORREÇÃO CRÍTICA DO BUG DO QUIZ */
+.step {
+    display: none !important;
+}
+
+.step.active {
+    display: block !important;
+}
+
+.step-indicator {
+    font-size: 12px;
+    font-weight: 700;
+    color: #059669;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.question-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.question-subtitle {
+    font-size: 14px;
+    color: #64748b;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.options-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.option-btn {
+    width: 100%;
+    padding: 16px 20px;
+    background: #f8fafc;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 14px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #334155;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.option-btn:hover {
+    border-color: #059669;
+    background: #ecfdf5;
+    color: #047857;
+    transform: translateY(-1px);
+}
+
+.result-icon {
+    width: 64px;
+    height: 64px;
+    background: #ecfdf5;
+    color: #059669;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px auto;
+}
+
+.result-icon svg {
+    width: 32px;
+    height: 32px;
+}
+
+.result-box {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 20px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.result-box h3 {
+    font-size: 16px;
+    color: #0f172a;
+    margin-bottom: 8px;
+}
+
+.result-box p {
+    font-size: 14px;
+    color: #475569;
+    line-height: 1.5;
+}
+
+.btn-cta {
+    width: 100%;
+    padding: 18px;
+    border: none;
+    border-radius: 14px;
+    background: #059669;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease;
+    box-shadow: 0 10px 15px -3px rgba(5, 150, 105, 0.25);
+    text-align: center;
+    text-decoration: none;
+    display: block;
+}
+
+.btn-cta:hover {
+    background: #047857;
+    transform: translateY(-1px);
+}
+
+/* ESTILOS DA PÁGINA PRINCIPAL */
+.main-section {
+    display: none;
+}
+
+.main-content {
+    padding: 28px 24px;
+    flex: 1;
+}
+
+h1.main-title {
+    font-size: 28px;
+    font-weight: 800;
+    text-align: center;
+    color: #0f172a;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 14px;
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 14px 18px;
+    border-radius: 16px;
+    margin-bottom: 12px;
+    transition: all 0.2s ease;
+}
+
+.icon-wrapper {
+    width: 40px;
+    height: 40px;
+    background: #ecfdf5;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #059669;
+    flex-shrink: 0;
+}
+
+.icon-wrapper svg {
+    width: 20px;
+    height: 20px;
+    stroke-width: 2;
+}
+
+.box h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 2px;
+}
+
+.box p {
+    font-size: 12px;
+    color: #64748b;
+}
+
+.btn-primary {
+    margin-top: 20px;
+    width: 100%;
+    padding: 18px;
+    border: none;
+    border-radius: 14px;
+    background: #059669;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 10px 15px -3px rgba(5, 150, 105, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-primary:hover {
+    background: #047857;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 20px -3px rgba(5, 150, 105, 0.4);
+}
+
+/* SEÇÃO DE PRODUTOS */
+.products-section {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 2px dashed #e2e8f0;
+}
+
+.section-title {
+    font-size: 22px;
+    font-weight: 800;
+    color: #0f172a;
+    text-align: center;
+    margin-bottom: 6px;
+}
+
+.section-subtitle {
+    font-size: 13px;
+    color: #64748b;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.product-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03);
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.product-card:hover {
+    border-color: #059669;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
+}
+
+.product-img-wrapper {
+    width: 100%;
+    height: 210px;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #f8fafc;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: 1px solid #f1f5f9;
+}
+
+.product-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.product-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.product-price {
+    font-size: 28px;
+    font-weight: 800;
+    color: #059669;
+    margin-bottom: 16px;
+}
+
+.btn-buy {
+    width: 100%;
+    padding: 16px;
+    background: #059669;
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 800;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 10px rgba(5, 150, 105, 0.25);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+}
+
+.btn-buy:hover {
+    background: #047857;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 14px rgba(5, 150, 105, 0.35);
+}
+
+/* CARD COMBO DESTAQUE */
+.combo-card {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    border: 2px solid #059669;
+    border-radius: 20px;
+    padding: 24px 20px;
+    margin-bottom: 24px;
+    box-shadow: 0 10px 25px -5px rgba(5, 150, 105, 0.3);
+    text-align: center;
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+.combo-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: #059669;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.combo-title {
+    font-size: 18px;
+    font-weight: 800;
+    color: #ffffff;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    line-height: 1.3;
+}
+
+.combo-subtitle {
+    font-size: 13px;
+    color: #94a3b8;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.btn-combo {
+    width: 100%;
+    padding: 16px;
+    background: #059669;
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 800;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(5, 150, 105, 0.4);
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.btn-combo:hover {
+    background: #047857;
+    transform: translateY(-2px);
+}
+
+/* MODAL DE DADOS DE ENTREGA */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(4px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    padding: 20px;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal-card {
+    background: #ffffff;
+    border-radius: 24px;
+    width: 100%;
+    max-width: 400px;
+    padding: 24px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    position: relative;
+    animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: #f1f5f9;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    font-size: 18px;
+    color: #64748b;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-title {
+    font-size: 20px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 6px;
+    text-align: center;
+}
+
+.modal-subtitle {
+    font-size: 13px;
+    color: #64748b;
+    margin-bottom: 20px;
+    text-align: center;
+    line-height: 1.4;
+}
+
+.form-group {
+    margin-bottom: 14px;
+    text-align: left;
+}
+
+.form-label {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    color: #334155;
+    margin-bottom: 6px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 14px 16px;
+    background: #f8fafc;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 14px;
+    color: #0f172a;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.form-input:focus {
+    border-color: #059669;
+    background: #ffffff;
+}
+
+.btn-submit-checkout {
+    width: 100%;
+    padding: 16px;
+    background: #059669;
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
+    text-transform: uppercase;
+}
+
+.btn-submit-checkout:hover {
+    background: #047857;
+    transform: translateY(-1px);
+}
+
+.footer {
+    padding: 20px 16px;
+    text-align: center;
+    font-size: 12px;
+    color: #94a3b8;
+    line-height: 1.5;
+}
+
+/* Botão Flutuante do WhatsApp */
+.whatsapp-float {
+    position: fixed;
+    width: 56px;
+    height: 56px;
+    bottom: 24px;
+    right: 24px;
+    background-color: #25d366;
+    color: #ffffff;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+}
+
+.whatsapp-float svg {
+    width: 30px;
+    height: 30px;
+    fill: #ffffff;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- SEÇÃO DO QUIZ (5 PERGUNTAS INTERATIVAS) -->
+    <div class="quiz-section" id="quizSection">
+        <div class="header">
+            <h1>FaceSlim • Avaliação</h1>
+        </div>
+        
+        <div class="progress-bar-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <div class="quiz-content">
+            <!-- ETAPA 1 -->
+            <div class="step active" id="step1">
+                <div class="step-indicator">Pergunta 1 de 5</div>
+                <h2 class="question-title">Qual é o seu principal objetivo?</h2>
+                <p class="question-subtitle">Selecione a opção que melhor descreve sua meta.</p>
+                <div class="options-grid">
+                    <button class="option-btn" onclick="nextStep(2, 40)">
+                        <span>Reduzir papada e gordura facial</span>
+                        <span>➔</span>
+                    </button>
+                    <button class="option-btn" onclick="nextStep(2, 40)">
+                        <span>Definir o contorno do maxilar</span>
+                        <span>➔</span>
+                    </button>
+                    <button class="option-btn" onclick="nextStep(2, 40)">
+                        <span>Melhorar a firmeza e sustentação da pele</span>
+                        <span>➔</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- ETAPA 2 -->
+            <div class="step" id="step2" style="display: none;">
+                <div class="step-indicator">Pergunta 2 de 5</div>
+                <h2 class="question-title">Quanto tempo você tem disponível por dia?</h2>
+                <p class="question-subtitle">Adequaremos a recomendação à sua rotina.</p>
+                <div class="options-grid">
+                    <button class="option-btn" onclick="nextStep(3, 60)">
+                        <span>Menos de 5 minutos por dia</span>
+                        <span>➔</span>
+                    </button>
+                    <button class="option-btn" onclick="nextStep(3, 60)">
+                        <span>De 5 a 15 minutos por dia</span>
+                        <span>➔</span>
+                    </button>
+                    <button class="option-btn" onclick="nextStep(3, 60)">
+                        <span>Tenho uma rotina flexível</span>
+                        <span>➔</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- ETAPA 3 -->
+            <div class="step" id="step3" style="display: none;">
+                <div class="step-indicator">Pergunta 3 de 5</div>
+                <h2 class="question-title">Qual é a sua maior preocupação atual no rosto?</h2>
+                <p class="question-subtitle">Isso nos ajuda a focar na sua maior necessidade.</p>
+                <div class="options-grid">
+                    <button class="option-btn" onclick="nextStep(4, 80)">
+                        <span>Flacidez na região do pescoço</span>
+                        <span>➔</span>
+                    </button>
+                    <button class="option-btn" onclick="nextStep(4, 80)">
+                        <span>Acúmulo de gordura abaixo do queixo</span>
+                        <span>➔</span>
+                    </button>
+                    <button class="option-btn" onclick="nextStep(4, 80)">
+                        <span>Sensação de rosto "inchado" ou sem formato</span>
+                        <span>➔</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- ETAPA 4 -->
+            <div class="step" id="step4" style="display: none;">
+                <div class="step-indicator">Pergunta 4 de 5</div>
+                <h2 class="question-title">Já tentou algum tratamento para o rosto antes?</h2>
+                <p class="question-subtitle">Queremos entender o seu histórico de cuidados.</p>
+                <div class="options-grid">
+                    <button class="option-btn" onclick="nextStep(5, 100)">
+                        <span>Sim, mas não obtive os resultados esperados</span>
+                        <span>➔</span>
+                    </button>
+                    <button class="option-btn" onclick="nextStep(5, 100)">
+                        <span>Sim, já faço alguns procedimentos estéticos</span>
+                        <span>➔</span>
+                    </button>
+                    <button class="option-btn" onclick="nextStep(5, 100)">
+                        <span>Nunca tentei nenhum método específico antes</span>
+                        <span>➔</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- ETAPA 5 -->
+            <div class="step" id="step5" style="display: none;">
+                <div class="step-indicator">Pergunta 5 de 5</div>
+                <h2 class="question-title">Em quanto tempo você deseja ver os primeiros resultados?</h2>
+                <p class="question-subtitle">Sua dedicação determina a velocidade da transformação.</p>
+                <div class="options-grid">
+                    <button class="option-btn" onclick="nextStep(6, 100)">
+                        <span>Nas primeiras semanas (com método acelerado)</span>
+                        <span>➔</span>
+                    </button>
+                    <button class="option-btn" onclick="nextStep(6, 100)">
+                        <span>A médio prazo, buscando consistência</span>
+                        <span>➔</span>
+                    </button>
+                    <button class="option-btn" onclick="nextStep(6, 100)">
+                        <span>No meu próprio ritmo, passo a passo</span>
+                        <span>➔</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- ETAPA 6: RESULTADO -->
+            <div class="step" id="step6" style="display: none;">
+                <div class="result-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                    </svg>
+                </div>
+                <h2 class="question-title">Avaliação Concluída!</h2>
+                <p class="question-subtitle">Analisamos todas as suas respostas com sucesso.</p>
+                
+                <div class="result-box">
+                    <h3>Protocolo Personalizado Compatível</h3>
+                    <p>Com base nos seus objetivos, rotina e necessidades, a linha de produtos <strong>FaceSlim</strong> é 100% indicada para o seu perfil.</p>
+                </div>
+
+                <button class="btn-cta" onclick="showMainSite()">IR PARA A PÁGINA PRINCIPAL</button>
+            </div>
+        </div>
+
+        <div class="footer">
+            Respostas confidenciais • Avaliação rápida
+        </div>
+    </div>
+
+    <!-- SEÇÃO DO SITE PRINCIPAL -->
+    <div class="main-section" id="mainSection">
+
+        <div class="main-content">
+            <h1 class="main-title">FaceSlim</h1>
+            <p class="subtitle">Inclua nossos produtos na sua rotina e potencialize os seus resultados.</p>
+
+            <div class="box">
+                <div class="icon-wrapper">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                    </svg>
+                </div>
+                <div>
+                    <h3>Uso simples</h3>
+                    <p>Prático para incluir na rotina diária.</p>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="icon-wrapper">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                    </svg>
+                </div>
+                <div>
+                    <h3>Entrega para todo Brasil</h3>
+                    <p>Receba no conforto da sua casa.</p>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="icon-wrapper">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                </div>
+                <div>
+                    <h3>Compra segura</h3>
+                    <p>Pagamento protegido e confiável.</p>
+                </div>
+            </div>
+
+            <!-- BOTÃO PRINCIPAL -->
+            <button class="btn-primary" onclick="scrollToProducts()">
+                CONHEÇA NOSSOS PRODUTOS ↓
+            </button>
+
+            <!-- SEÇÃO DE PRODUTOS -->
+            <div class="products-section" id="produtos">
+                <h2 class="section-title">NOSSOS PRODUTOS</h2>
+                <p class="section-subtitle">Escolha o produto ideal para sua rotina ou garanta a oferta completa.</p>
+
+                <!-- PRODUTO 1: E-BOOK -->
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="https://i.postimg.cc/fRvmf8Rr/1786035601373.png" referrerpolicy="no-referrer" alt="E-book de como potencializar a beleza" class="product-img">
+                    </div>
+                    <h3 class="product-title">📘 E-book de como potencializar a beleza</h3>
+                    <div class="product-price">R$ 12,40</div>
+                    <button class="btn-buy" onclick="openCheckoutModal('https://pay.goatpay.com.br/pay/s3v7p9/e-book-para-potencializar-a-beleza')">COMPRAR</button>
+                </div>
+
+                <!-- PRODUTO 2: FITA MODELADORA -->
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="https://i.postimg.cc/1XTN4dM4/D-Q-NP-700396-MLA106377338548-022026-O.webp" referrerpolicy="no-referrer" alt="Fita Modeladora Ajustável Eliminadora de Papada" class="product-img">
+                    </div>
+                    <h3 class="product-title">🎗️ Fita Modeladora Ajustável Eliminadora de Papada</h3>
+                    <div class="product-price">R$ 7,45</div>
+                    <button class="btn-buy" onclick="openCheckoutModal('https://pay.goatpay.com.br/pay/k8b6w5/fita-ajustavel-eliminador-de-papada')">COMPRAR</button>
+                </div>
+
+                <!-- PRODUTO 3: SUPLEMENTO -->
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="https://i.postimg.cc/8CPWKLF6/1786030522711.png" referrerpolicy="no-referrer" alt="Suplemento Eliminador de Gordura Facial" class="product-img">
+                    </div>
+                    <h3 class="product-title">💊 Suplemento Eliminador de Gordura Facial</h3>
+                    <div class="product-price">R$ 19,90</div>
+                    <button class="btn-buy" onclick="openCheckoutModal('https://pay.goatpay.com.br/pay/f4p5a0/eliminador-de-gordura-facial')">COMPRAR</button>
+                </div>
+
+                <!-- COMBO DE TODOS OS PRODUTOS (PROMOÇÃO) -->
+                <div class="combo-card">
+                    <span class="combo-badge">OFERTA ESPECIAL</span>
+                    <h3 class="combo-title">🔥 COMBO DE TODOS OS PRODUTOS (PROMOÇÃO)</h3>
+                    <p class="combo-subtitle">Leve o E-book + Fita Modeladora + Suplemento com desconto exclusivo do pacote completo!</p>
+                    <button class="btn-combo" onclick="openCheckoutModal('https://pay.goatpay.com.br/pay/z1d2m0/combo-de-todos-os-produtos-promocao')">GARANTIR COMBO COMPLETO</button>
+                </div>
+
+            </div>
+
+            <div class="footer">
+                Pagamento 100% seguro • Atendimento online
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- MODAL FORMULÁRIO DE ENTREGA / CONTATO -->
+<div class="modal-overlay" id="checkoutModal">
+    <div class="modal-card">
+        <button class="modal-close" onclick="closeCheckoutModal()">✕</button>
+        <h3 class="modal-title">Dados para Envio</h3>
+        <p class="modal-subtitle">Preencha seu endereço e telefone antes de prosseguir para o pagamento seguro.</p>
+        
+        <form id="deliveryForm" onsubmit="handleFormSubmit(event)">
+            <div class="form-group">
+                <label class="form-label" for="telefone">Número de Telefone / WhatsApp *</label>
+                <input type="tel" id="telefone" class="form-input" placeholder="(00) 90000-0000" required>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="endereco">Endereço Completo de Entrega *</label>
+                <input type="text" id="endereco" class="form-input" placeholder="Rua, Número, Bairro, Cidade - UF, CEP" required>
+            </div>
+
+            <button type="submit" class="btn-submit-checkout">IR PARA O PAGAMENTO ➔</button>
+        </form>
+    </div>
+</div>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/5571920041128" class="whatsapp-float" id="whatsappBtn" target="_blank" aria-label="Contato via WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+        <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3 18.6-68.1-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+    </svg>
+</a>
+
+<script>
+    let currentCheckoutUrl = '';
+
+    // Lógica do Quiz (5 etapas + resultado)
+    function nextStep(stepNumber, progressPercent) {
+        // Oculta todas as etapas
+        document.querySelectorAll('.step').forEach(step => {
+            step.classList.remove('active');
+            step.style.setProperty('display', 'none', 'important');
+        });
+
+        // Exibe a etapa atual
+        const nextStepEl = document.getElementById('step' + stepNumber);
+        if (nextStepEl) {
+            nextStepEl.classList.add('active');
+            nextStepEl.style.setProperty('display', 'block', 'important');
+        }
+
+        document.getElementById('progressBar').style.width = progressPercent + '%';
+    }
+
+    // Transição do Quiz para o Site Principal
+    function showMainSite() {
+        document.getElementById('quizSection').style.setProperty('display', 'none', 'important');
+        document.getElementById('mainSection').style.display = 'block';
+        document.getElementById('whatsappBtn').style.display = 'flex';
+        window.scrollTo(0, 0);
+    }
+
+    // Rolar até a seção de produtos
+    function scrollToProducts() {
+        const productsElement = document.getElementById('produtos');
+        if (productsElement) {
+            productsElement.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
+    // Abrir Modal de Dados
+    function openCheckoutModal(checkoutUrl) {
+        currentCheckoutUrl = checkoutUrl;
+        document.getElementById('checkoutModal').classList.add('active');
+    }
+
+    // Fechar Modal
+    function closeCheckoutModal() {
+        document.getElementById('checkoutModal').classList.remove('active');
+    }
+
+    // Processar Envio do Formulário e Redirecionar
+    function handleFormSubmit(event) {
+        event.preventDefault();
+        
+        const telefone = document.getElementById('telefone').value;
+        const endereco = document.getElementById('endereco').value;
+
+        if (!telefone || !endereco) {
+            alert('Por favor, preencha o seu endereço e telefone antes de prosseguir.');
+            return;
+        }
+
+        // Redireciona para o link de checkout correspondente
+        if (currentCheckoutUrl) {
+            window.location.href = currentCheckoutUrl;
+        }
+    }
+</script>
+
+</body>
+</html>
