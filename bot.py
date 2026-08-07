@@ -11,7 +11,7 @@ from flask import Flask, request, jsonify
 from threading import Thread
 
 # Configurações do Bot
-TOKEN_TELEGRAM = "seu token "
+TOKEN_TELEGRAM = "8809374742:AAHqz-SLxihWi_IVW_gCYba9Uh1HsoBvbeI"
 ID_CANAL_VIP = -
 ADMIN_ID = 
 
