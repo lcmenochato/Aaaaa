@@ -12,8 +12,8 @@ from threading import Thread
 
 # Configurações do Bot
 TOKEN_TELEGRAM = "8809374742:AAHqz-SLxihWi_IVW_gCYba9Uh1HsoBvbeI"
-ID_CANAL_VIP = -
-ADMIN_ID = 
+ID_CANAL_VIP = -1001234567890
+ADMIN_ID = 123456789
 
 # Webhook do Discord para Notificações
 URL_WEBHOOK_DISCORD = ""
